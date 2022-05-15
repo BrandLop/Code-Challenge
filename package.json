@@ -1,0 +1,19 @@
+{
+  "name": "code-challenge",
+  "version": "1.0.0",
+  "description": "Code Challenge for LaunchX",
+  "main": "index.js",
+  "scripts": {
+    "test": "node ./node_modules/.bin/jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BrandLop/Code-Challenge.git"
+  },
+  "author": "BrandLop",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BrandLop/Code-Challenge/issues"
+  },
+  "homepage": "https://github.com/BrandLop/Code-Challenge#readme"
+}
