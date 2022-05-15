@@ -4,7 +4,9 @@
   "description": "Code Challenge for LaunchX",
   "main": "index.js",
   "scripts": {
-    "test": "node ./node_modules/.bin/jest"
+    "test": "node ./node_modules/.bin/jest",
+    "linter": "node ./node_modules/eslint/bin/eslint.js .",
+    "linter-fix": "node ./node_modules/eslint/bin/eslint.js . --fix"
   },
   "repository": {
     "type": "git",
@@ -17,6 +19,7 @@
   },
   "homepage": "https://github.com/BrandLop/Code-Challenge#readme",
   "devDependencies": {
+    "eslint": "^8.15.0",
     "jest": "^28.1.0",
     "supertest": "^6.2.3"
   },
