@@ -1,10 +1,8 @@
 const StudentController = require("../../lib/controllers/StudentsController");
-const Reader = require("../../lib/utils/Reader");
 
 describe("Tests for StudentController", () => {
     test("Get students list from StudentController", () => {
-        const jsonfile = Reader.readerJSONFile("./visualpartners.json");
-        const studentslis = StudentController.getStudents(jsonfile);
+        const studentslis = StudentController.getStudents();
         expect(studentslis.length).toEqual(51);
         expect(studentslis[0]).toMatchObject({
             id: expect.any(String),
