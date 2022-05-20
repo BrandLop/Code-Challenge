@@ -16,4 +16,12 @@ describe("Tests for StudentService", () => {
             haveCertification: expect.any(Boolean)
         });
     });
+
+    test("Get certified students emails from JSON file", () => {
+        const expected = /@/;
+        const jsonfile = Reader.readerJSONFile("./visualpartners.json");
+        const certifiedsEmails = StudentService.getCertifiedEmailList(jsonfile);
+        expect(certifiedsEmails.length).toEqual(29);
+        expect(certifiedsEmails[0]).toEqual(expect.stringMatching(expected));
+    });
 });
