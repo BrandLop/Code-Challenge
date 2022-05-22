@@ -25,6 +25,14 @@ describe("GET task for VisualPartners API", function() {
         });
     });
 
+    test("Should return a list of visualpartners emails certified", async() => {
+        const response = await request(app)
+            .get("/v1/visualpartners/havecertification/email");
+        expect(response.statusCode).toEqual(200);
+        expect(response.body.length).toBeGreaterThan(0);
+        expect(response.body[0]).toEqual(expect.stringMatching(/@/));
+    });
+
     afterAll(() => {
         server.close();
     });
