@@ -33,6 +33,14 @@ describe("GET task for VisualPartners API", function() {
         expect(response.body[0]).toEqual(expect.stringMatching(/@/));
     });
 
+    test("Should return a list of visualpartners with credits greater than 500", async() => {
+        const response = await request(app)
+            .get("/v1/visualpartners/credits");
+        expect(response.statusCode).toEqual(200);
+        expect(response.body.length).toBeGreaterThan(0);
+        expect(response.body[0].credits).toBeGreaterThanOrEqual(500);
+    });
+
     afterAll(() => {
         server.close();
     });
