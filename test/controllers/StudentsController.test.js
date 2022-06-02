@@ -20,4 +20,10 @@ describe("Tests for StudentController", () => {
         expect(certifiedEmails.length).toEqual(29);
         expect(certifiedEmails[0]).toEqual(expect.stringMatching(/@/));
     });
+
+    test("Get students list with credits greater than 500 from StudentService", () => {
+        const studentsCredits = StudentController.getStudentsWithCreditsGreaterThan500();
+        expect(studentsCredits.length).toEqual(27);
+        expect(studentsCredits[0].credits).toBeGreaterThanOrEqual(500);
+    });
 });
