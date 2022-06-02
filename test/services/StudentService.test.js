@@ -24,4 +24,11 @@ describe("Tests for StudentService", () => {
         expect(certifiedsEmails.length).toEqual(29);
         expect(certifiedsEmails[0]).toEqual(expect.stringMatching(expected));
     });
+
+    test("Get students list with credits greater than 500 from JSON file", () => {
+        const jsonfile = Reader.readerJSONFile("./visualpartners.json");
+        const studentCredits = StudentService.getStudentCredits(jsonfile);
+        expect(studentCredits.length).toEqual(27);
+        expect(studentCredits[0].credits).toBeGreaterThanOrEqual(500);
+    });
 });
